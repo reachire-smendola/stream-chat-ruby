@@ -405,7 +405,7 @@ module StreamChat
       end
       raise StreamAPIException, response if response.status >= 399
 
-      parsed_result
+      parsed_result.with_indifferent_access
     end
 
     def make_http_request(method, relative_url, params: nil, data: nil)
